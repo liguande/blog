@@ -1,4 +1,4 @@
-<table class="table table-bordered">
+<table class="table table-bordered text-center">
 	<thead>
 		<tr>
 			<th>用户编号</th>
@@ -14,8 +14,8 @@
 				<td><%= user.username %></td>
 				<td><%= user.password %></td>
 				<td>
-					<button type="button" class="btn btn-danger">删除</button>
-					<button type="button" class="btn btn-primary">修改</button>
+					<a href="<%= delete_path(user.id) %>" class="btn btn-danger">删除</a>
+					<a href="#" class="btn btn-primary">修改</a>
 				</td>
 			</tr>
 		<% end %>

@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-	protect_from_forgery :only => :index
+	protect_from_forgery :only => :login
 
 	private
 		def current_user

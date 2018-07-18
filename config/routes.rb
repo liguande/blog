@@ -5,5 +5,6 @@ Rails.application.routes.draw do
 	post "user/create" => "user#create",:as => "create"
 	post "user/login_session" => "user#login_session",:as => "login_session"
 	get "user/logout" => "user#logout",:as => "logout"
+	get "user/delete/:id" => "user#delete",:as => "delete"
 	# For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

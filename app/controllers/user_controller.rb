@@ -30,4 +30,10 @@ class UserController < ApplicationController
 		session[:user_id] = nil
 		redirect_to :root
 	end
+
+	def delete
+		user_id = params[:id]
+		User.find_by_id(user_id).destroy
+		redirect_to :root
+	end
 end
