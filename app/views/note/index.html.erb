@@ -1,0 +1,23 @@
+<table class="table table-bordered text-center">
+	<thead>
+		<tr>
+			<th>帖子编号</th>
+			<th>标题</th>
+			<th>内容</th>
+			<th>操作</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @note.each do |i| %>
+			<tr>
+				<td><%= i.id %></td>
+				<td><%= i.title %></td>
+				<td><%= i.content %></td>
+				<td>
+					<a href="<%= note_delete_path(i.id) %>" class="btn btn-danger" method="delete">删除</a>
+					<a href="<%= note_change_path(i.id) %>" class="btn btn-primary">修改</a>
+				</td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>

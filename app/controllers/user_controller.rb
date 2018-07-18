@@ -1,4 +1,13 @@
 class UserController < ApplicationController
+	before_action :need_login,:only => :user_center
+
+	def need_login
+		if !current_user
+			redirect_to :login
+		end
+	end
+
+
 	def index
 		@user = User.all
 	end

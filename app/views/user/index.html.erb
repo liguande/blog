@@ -14,8 +14,12 @@
 				<td><%= user.username %></td>
 				<td><%= user.password %></td>
 				<td>
-					<a href="<%= delete_path(user.id) %>" class="btn btn-danger" method="delete">删除</a>
-					<a href="<%= change_path(user.id) %>" class="btn btn-primary">修改</a>
+					<% if current_user %>
+						<a href="<%= delete_path(user.id) %>" class="btn btn-danger" method="delete">删除</a>
+						<a href="<%= change_path(user.id) %>" class="btn btn-primary">修改</a>
+					<% else %>
+						<%= link_to "请登录",login_path %>
+					<% end %>
 				</td>
 			</tr>
 		<% end %>

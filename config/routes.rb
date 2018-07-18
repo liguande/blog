@@ -9,5 +9,16 @@ Rails.application.routes.draw do
 	get "user/change/:id" => "user#change",:as => "change"
 	post "user/update/:id" => "user#update",:as => "update"
 	get "user/user_center" => "user#user_center",:as => "user_center"
+	
+
+	get 'note/index' => "note#index",:as => "note_index"
+	get 'note/new' => "note#new",:as =>"note_new"
+	post "note/create" => "note#create",:as => "note_create"
+	get "note/delete/:id" => "note#delete",:as => "note_delete"
+	get 'note/change/:id' => "note#change",:as => "note_change"
+	post "note/update/:id" => "note#update",:as => "note_update"
+
+
+
 	# For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
