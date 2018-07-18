@@ -36,4 +36,16 @@ class UserController < ApplicationController
 		User.find_by_id(user_id).destroy
 		redirect_to :root
 	end
+
+	def change
+		@user = User.find_by_id(params[:id])
+	end
+
+	def update
+		user = User.find_by_id(params[:id])
+		user.username = params[:username]
+		user.password = params[:password]
+		user.save
+		redirect_to :root
+	end
 end

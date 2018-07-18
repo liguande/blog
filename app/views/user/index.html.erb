@@ -15,7 +15,7 @@
 				<td><%= user.password %></td>
 				<td>
 					<a href="<%= delete_path(user.id) %>" class="btn btn-danger">删除</a>
-					<a href="#" class="btn btn-primary">修改</a>
+					<a href="<%= change_path(user.id) %>" class="btn btn-primary">修改</a>
 				</td>
 			</tr>
 		<% end %>
