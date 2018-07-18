@@ -1,17 +1,18 @@
 class UserController < ApplicationController
 	def index
 		@user = User.all
-		@name = session[:user_id]
 	end
+
 	def regest
-		@user = User.new
 	end
+
 	def login
 	end
+	
 	def create
-		username = params[:username]
+		qwe = params[:username]
 		password = params[:password]
-		User.create(:username => username,:password => password)
+		User.create(:username => qwe,:password => password)
 		redirect_to :login
 	end
 	def login_session
