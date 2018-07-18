@@ -48,4 +48,8 @@ class UserController < ApplicationController
 		user.save
 		redirect_to :root
 	end
+
+	def user_center
+		@user = User.find_by_id(session[:user_id])
+	end
 end

@@ -27,9 +27,9 @@
               <li><a href="/user/regest">注册</a></li>
             <% else %>
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">欢迎<%= current_user.username %> <span class="caret"></span></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">欢迎&nbsp;&nbsp;<%= current_user.username %> <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                    <li><a href="#">个人中心</a></li>
+                    <li><a href="<%= user_center_path %>">个人中心</a></li>
                     <li role="separator" class="divider"></li>
                     <li><a href="/user/logout">退出登录</a></li>
                 </ul>

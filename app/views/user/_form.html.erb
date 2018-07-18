@@ -1,11 +1,12 @@
 <form action="<%= url %>" method="post">
 	<div class="form-group">
 	    <label for="username">用户名</label>
-	    <input type="text" class="form-control" id="username" placeholder="请于此输入用户名" name="username"  value="<%= user.username %>">
+	    <input type="text" class="form-control" id="username" placeholder="请于此输入用户名" name="username" <% if user != nil %> value="<%= user.username %>" <% end %>>
   	</div>
   	<div class="form-group">
 	    <label for="password">密码</label>
-	    <input type="password" class="form-control" id="password" placeholder="请于此输入密码" name="password" value="<%= user.password %>"
+	    <input type="password" class="form-control" id="password" placeholder="请于此输入密码" name="password" <% if user != nil %> value="<%= user.password %>"
+	    <% end %>
 	    >
   	</div>
   	<% if lOrR == 0 %>

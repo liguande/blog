@@ -8,5 +8,6 @@ Rails.application.routes.draw do
 	get "user/delete/:id" => "user#delete",:as => "delete"
 	get "user/change/:id" => "user#change",:as => "change"
 	post "user/update/:id" => "user#update",:as => "update"
+	get "user/user_center" => "user#user_center",:as => "user_center"
 	# For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
