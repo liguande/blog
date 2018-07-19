@@ -21,8 +21,10 @@
           <a class="navbar-brand" href="/">Blog</a>
         </div>
           <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "帖子首页",note_index_path %></li>
             <% if !current_user %>
             <!--   <li><a href="/user/login">登录</a></li> -->
+
               <li><%= link_to "登录",login_path %></li>
               <li><a href="/user/regest">注册</a></li>
             <% else %>

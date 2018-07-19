@@ -1,4 +1,13 @@
 class NoteController < ApplicationController
+  before_action :need_login,:only => :create
+
+  def need_login
+    if !current_user
+      redirect_to :login
+    end
+  end
+
+  
   def index
   	@note = Note.all.reverse
   end
@@ -13,7 +22,7 @@ class NoteController < ApplicationController
   def create
   	title = params[:title]
   	content = params[:content]
-  	Note.create(:title => title,:content => content)
+  	Note.create(:title => title,:content => content,:user_id => session[:user_id])
   	redirect_to :note_index
   end
 

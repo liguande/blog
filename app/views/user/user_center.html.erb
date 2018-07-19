@@ -1,2 +1,5 @@
-<%= @user.username %>
-<%= @user.password %>
+<ul class="list-group">
+	<% @note.each do |i| %>
+		<li class="list-group-item"><%= i.title %></li>
+	<% end %>
+</ul>

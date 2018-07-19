@@ -1,4 +1,4 @@
-<form action="<%= url %>" method="post">
+<form action="<%= url %>" method="post" data-remote="true">
 	<div class="form-group">
 	    <label for="username">用户名</label>
 	    <input type="text" class="form-control" id="username" placeholder="请于此输入用户名" name="username" <% if user != nil %> value="<%= user.username %>" <% end %>>

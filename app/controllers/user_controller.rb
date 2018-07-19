@@ -13,6 +13,7 @@ class UserController < ApplicationController
 	end
 
 	def regest
+		@user = User.new
 	end
 
 	def login
@@ -24,6 +25,12 @@ class UserController < ApplicationController
 		User.create(:username => qwe,:password => password)
 		redirect_to :login
 	end
+
+
+	# def user_params
+	# 	params.require(:user).permit(:username,:password)
+	# end
+
 	def login_session
 		username = params[:username]
 		password = params[:password]
@@ -59,6 +66,6 @@ class UserController < ApplicationController
 	end
 
 	def user_center
-		@user = User.find_by_id(session[:user_id])
+		@note = current_user.notes
 	end
 end
