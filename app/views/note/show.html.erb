@@ -5,22 +5,17 @@
 </div>
 <hr>
 
-<% @comment.each do |c| %>
-	<div class="media">
-		<div class="media-body">
-		    <h4 class="media-heading"><%= c.user.username %></h4>
-		    <%= c.content %>
-		    <% if current_user.id == c.user.id %>
-		    	<a href="<%= comment_delete_path(c.note.id,c.id) %>">删除</a>
-		    <% end %>
-		</div>
-	</div>
-<% end %>
+<div class="comment">
+	<% @comment.each do |c| %>
+		<%= render :partial => "comment/comment_h",:locals => {:c => c} %>
+	<% end %>
+</div>
+
 
 
 
 <hr>
-<form action="<%= comment_create_path(@note.id) %>" method="post">
+<form action="<%= comment_create_path(@note.id) %>" method="post" data-remote="true">
 	<div class="form-group">
 	 	<label for="content">评论内容</label>
 	    <textarea class="form-control" rows="3" id="content" name="content"></textarea>

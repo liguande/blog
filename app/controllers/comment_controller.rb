@@ -2,8 +2,10 @@ class CommentController < ApplicationController
 	def create
 		c = params[:content]
 		note_id = params[:note_id]
-		Comment.create(:content => c,:user_id => session[:user_id],:note_id => note_id)
-		redirect_to note_show_path(note_id)
+		@comment = Comment.create(:content => c,:user_id => session[:user_id],:note_id => note_id)
+		respond_to do |format|
+			format.js
+		end
 	end
 
 	def delete

@@ -1,0 +1,9 @@
+<div class="media">
+	<div class="media-body">
+	    <h4 class="media-heading"><%= c.user.username %></h4>
+	    <%= c.content %>
+	    <% if current_user.id == c.user.id %>
+	    	<a href="<%= comment_delete_path(c.note.id,c.id) %>">删除</a>
+	    <% end %>
+	</div>
+</div>
