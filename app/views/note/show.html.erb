@@ -1,0 +1,29 @@
+<div class="jumbotron">
+	<h1><%= @note.title %></h1>
+	<p><%= @note.content %></p>
+	<p><span>作者：<%= @note.user.username %></span></p>
+</div>
+<hr>
+
+<% @comment.each do |c| %>
+	<div class="media">
+		<div class="media-body">
+		    <h4 class="media-heading"><%= c.user.username %></h4>
+		    <%= c.content %>
+		    <% if current_user.id == c.user.id %>
+		    	<a href="<%= comment_delete_path(c.note.id,c.id) %>">删除</a>
+		    <% end %>
+		</div>
+	</div>
+<% end %>
+
+
+
+<hr>
+<form action="<%= comment_create_path(@note.id) %>" method="post">
+	<div class="form-group">
+	 	<label for="content">评论内容</label>
+	    <textarea class="form-control" rows="3" id="content" name="content"></textarea>
+	</div>
+	<button type="submit" class="btn btn-default">发布</button>
+</form>

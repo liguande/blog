@@ -40,4 +40,9 @@ class NoteController < ApplicationController
   	Note.find_by_id(params[:id]).destroy
   	redirect_to :note_index
   end
+
+  def show
+    @note = Note.find(params[:id])
+    @comment = @note.comments
+  end
 end

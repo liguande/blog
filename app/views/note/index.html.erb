@@ -12,7 +12,9 @@
 		<% @note.each do |i| %>
 			<tr>
 				<td><%= i.id %></td>
-				<td><%= i.title %></td>
+				<td>
+					<a href="<%= note_show_path i.id %>"><%= i.title %></a>
+				</td>
 				<td><%= i.content %></td>
 				<td><%= i.user.username %></td>
 				<td>

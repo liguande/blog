@@ -17,8 +17,9 @@ Rails.application.routes.draw do
 	get "note/delete/:id" => "note#delete",:as => "note_delete"
 	get 'note/change/:id' => "note#change",:as => "note_change"
 	post "note/update/:id" => "note#update",:as => "note_update"
-
-
+	get "note/show/:id" => "note#show",:as => "note_show"
+	post "note/:note_id/comment/create" => "comment#create",:as => "comment_create"
+	get "note/:note_id/comment/delete/:comment_id" => "comment#delete",:as =>"comment_delete"
 
 	# For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
